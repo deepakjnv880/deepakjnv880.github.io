@@ -1,0 +1,139 @@
+#about{
+    background-color: rgb(47, 100, 107);
+    color: white;
+    padding-left: 1vw;
+}
+
+#photo{
+    color: white;
+    background-color: rgb(44, 8, 49);
+    /* background-color: rgb(139, 27, 74); */
+}
+
+#project a{
+    color: white;
+}
+
+#project button{
+    color: white;
+    background-color: black;
+}
+
+#contact{
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    text-shadow: 2px 2px #FF0000;
+  }
+
+.social {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: indigo;
+    color: white;
+    text-align: center;
+  }
+.social a{
+    margin-left: 2%;
+}
+
+.container-fluid {
+    padding-right:0px;
+    padding-left:0px;
+    margin-right:auto;
+    margin-left:auto
+ }
+
+ #navbar{
+    background-color: indigo;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:1;
+    /* height: ; */
+}
+.name{
+    /* padding-top: 10px; */
+    font-size: 30px;
+    color:white;
+    display: flex;
+    font-weight: 900;
+}
+
+.navbar-buttons button{
+  /* color: red; */
+  /* padding-left: 2vw; */
+  margin-left: 2vw;
+  border: none;
+}
+
+@media (max-width:540px){
+  .name{
+      display:none;
+  }
+}
+
+.btn-group button {
+    border-radius: 2px;
+    background-color: indigo;
+    border: 1px solid indigo; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px;/* Some padding*/
+    cursor: pointer; /* Pointer/hand icon */
+    float: right; /* Float the buttons side by side */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: white;
+    color: black;
+  }
+
+.btn-group button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.body{
+    background-color: indigo;
+    display: block;
+}
+
+.magic1{
+    font-size: 25px;
+    color: gold;
+}
+
+.magic2{
+    font-size: 35px;
+    font-weight:550;
+    color:white;
+}
+
+@media (max-width:540px){
+    .magic1{
+        font-size: 15px;
+    }
+    .magic2{
+        font-size: 20px;
+        font-weight:350;
+    }
+  }
+
+
+
