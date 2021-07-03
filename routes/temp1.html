@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../shared.css"> 
+    
+    <title>Welcome folks!</title>
+    <link rel = "icon" href ="../public/title.png" type = "image/x-icon">
+  </head>
+  <body>
+    <div style="background-color:White;color:black;width:99.1vw">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="w-60 p-3">Course List</h3>
+            </div>
+            <div style="overflow-x:auto" id='allcourse' class="card-body">
+            </div>
+            <div class="card-footer">
+                <center>
+                <a href="../index.html"><button style="background-color:black;color:white;margin-left:4vw" class="btn" > Home</button></a>
+                <br/><br/>
+                </center>
+            </div>
+        </div>
+    </div>
+    <script>
+        const semester_grade= [['Course No', 'Course Name', 'Credit', 'Semester', 'Period', 'Grade', 'Attendance Code'], ['CS-403', 'Algorithm Design and Analysis', '4.00', '08', '2020-2021 EVEN', 'B', 'S'], ['DS-201', 'Data Handling and Visualization', '3.00', '08', '2020-2021 EVEN', 'C', 'NA'], ['HS-107', 'Exploring Creative Art Forms', '1.00', '08', '2020-2021 EVEN', 'P', 'G'], ['HS-304', 'Organizational Management', '3.00', '08', '2020-2021 EVEN', 'C', 'S'], ['HS-393', 'Technology and World History:1400 to the present', '3.00', '08', '2020-2021 EVEN', 'C', 'NA'], ['HS-539', 'Post War Germany - Politics, Society and Culture', '3.00', '08', '2020-2021 EVEN', 'B', 'S'], ['CS-307', 'Systems Practicum', '2.00', '07', '2020-2021 ODD', 'A', 'G'], ['EE-608', 'Digital Image Processing', '4.00', '07', '2020-2021 ODD', 'C', 'NA'], ['HS-105_3', 'Basic Communication Skills', '3.00', '07', '2020-2021 ODD', 'C', 'S'], ['HS-205', 'Financial Accounting', '3.00', '07', '2020-2021 ODD', 'C', 'S'], ['HS-461', 'Consumer Behaviour', '3.00', '07', '2020-2021 ODD', 'C', 'S'], ['CS-302', 'Paradigms of Programming', '4.00', '06', '2019-2020 EVEN', 'B', 'NA'], ['CS-549', 'Computer Networks Analysis', '3.00', '06', '2019-2020 EVEN', 'B', 'NA'], ['CS-671', 'Deep Learning and Applications', '4.00', '06', '2019-2020 EVEN', 'B', 'G'], ['HS-252', 'Introduction to Psychology', '3.00', '06', '2019-2020 EVEN', 'B', 'G'], ['HS-481', 'International Economics', '3.00', '06', '2019-2020 EVEN', 'A', 'G'], ['IC-242', 'Continuum Mechanics', '3.00', '06', '2019-2020 EVEN', 'A', 'NA'], ['CS-308', 'Large Applications Practicum', '2.00', '05', '2019-2020 ODD', 'B', 'G'], ['CS-310', 'Introduction to Communicating Distributed Processes', '4.00', '05', '2019-2020 ODD', 'B', 'G'], ['CS-669', 'Pattern Recognition', '4.00', '05', '2019-2020 ODD', 'A', 'S'], ['IC-130', 'Applied Chemistry for Engineers', '3.00', '05', '2019-2020 ODD', 'C', 'S'], ['IC-130P', 'Chemistry Practicum', '2.00', '05', '2019-2020 ODD', 'B', 'G'], ['IC-241', 'Materials Science for Engineers', '3.00', '05', '2019-2020 ODD', 'C', 'S'], ['CS-201', 'Computer organization', '3.00', '04', '2018-2019 EVEN', 'C', 'G'], ['CS-201P', 'Computer organization Laboratory', '1.00', '04', '2018-2019 EVEN', 'C', 'VG'], ['CS-309', 'Information and Database Systems', '4.00', '04', '2018-2019 EVEN', 'C', 'VG'], ['IC-201P', 'Design Practicum', '4.00', '04', '2018-2019 EVEN', 'O', 'VG'], ['IC-210', 'Probability Statistics & Random Processes', '3.00', '04', '2018-2019 EVEN', 'B', 'S'], ['IC-221', 'Foundations of Electrodynamics', '3.00', '04', '2018-2019 EVEN', 'B', 'S'], ['IC-222P', 'Physics Practicum', '2.00', '04', '2018-2019 EVEN', 'A', 'VG'], ['IC-260', 'Signals and Systems', '3.00', '04', '2018-2019 EVEN', 'A', 'S'], ['CS-202', 'Advanced Data Structure and Algorithms', '4.00', '03', '2018-2019 ODD', 'B', 'VG'], ['CS-207', 'Applied Databases Practicum', '2.00', '03', '2018-2019 ODD', 'C', 'S'], ['CS-208', 'Mathematical Foundations of Computer Science', '4.00', '03', '2018-2019 ODD', 'D', 'G'], ['HS-202_1', 'Principles of Economics', '3.00', '03', '2018-2019 ODD', 'B', 'VG'], ['IC-121', 'Mechanics of Particles and Waves', '3.00', '03', '2018-2019 ODD', 'C', 'VG'], ['IC-136', 'Understanding Biotechnology and Its Applications', '3.00', '03', '2018-2019 ODD', 'C', 'S'], ['IC-240', 'Mechanics of Rigid Bodies', '3.00', '03', '2018-2019 ODD', 'C', 'S'], ['HS-342', 'German -I', '3.00', '02', '2017-2018 EVEN', 'B', 'VG'], ['IC-111', 'Linear Algebra', '3.00', '02', '2017-2018 EVEN', 'A', 'VG'], ['IC-141', 'Product Realization Technology', '2.00', '02', '2017-2018 EVEN', 'B', 'S'], ['IC-141P', 'Product Realization Technology lab', '2.00', '02', '2017-2018 EVEN', 'A', 'S'], ['IC-142', 'Engineering Thermodynamics', '4.00', '02', '2017-2018 EVEN', 'B', 'G'], ['IC-161', 'Applied Electronics', '3.00', '02', '2017-2018 EVEN', 'B', 'G'], ['IC-161P', 'Applied Electronics Lab', '2.00', '02', '2017-2018 EVEN', 'A', 'VG'], ['IC-250', 'Programming and Data Structure Practicum', '3.00', '02', '2017-2018 EVEN', 'B', 'G'], ['HS-106', 'ENGLISH -I', '3.00', '01', '2017-2018 ODD', 'C', 'S'], ['IC-101P', 'Reverse Engineering', '2.00', '01', '2017-2018 ODD', 'B', 'VG'], ['IC-110', 'Engineering Mathematics', '3.00', '01', '2017-2018 ODD', 'C', 'G'], ['IC-140', 'Graphics for Design', '4.00', '01', '2017-2018 ODD', 'C', 'VG'], ['IC-150', 'Computation for Engineers', '3.00', '01', '2017-2018 ODD', 'B', 'VG'], ['IC-150P', 'Computation for Engineers Lab', '2.00', '01', '2017-2018 ODD', 'B', 'VG'], ['IC-160', 'Electrical Systems Around Us', '3.00', '01', '2017-2018 ODD', 'B', 'G'], ['IC-160P', 'Electrical Systems Around Us Lab', '2.00', '01', '2017-2018 ODD', 'A', 'S']]
+        var HTML = "<table border=1>";
+        for(var i=0;i<semester_grade.length;i++)
+        {   
+            HTML+="<tr>"
+            for(var j=0;j<semester_grade[i].length;j++){
+                HTML += "<td>"+semester_grade[i][j]+"</td>";
+            }
+            HTML+="</tr>"
+        }
+        HTML += "</table>";
+        document.getElementById("allcourse").innerHTML = HTML; 
+    </script>
+  </body>
+</html>
